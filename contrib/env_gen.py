@@ -2,10 +2,13 @@
 Python SECRET_KEY generator.
 """
 import random
+import string
+import secrets
 
-chars = "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!?@#$%^&*()"
+alphanum = string.printable
+
 size = 50
-secret_key = "".join(random.sample(chars, size))
+secret_key = "".join(secrets.choice(alphanum) for i in range(size))
 
 chars = "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!?@#$%_"
 size = 20
